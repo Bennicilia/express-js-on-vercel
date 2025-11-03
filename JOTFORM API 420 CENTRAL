@@ -55,3 +55,9 @@ export default function handler(req, res) {
 }
 npm install --save-dev webpack webpack-cli
 npm install --save-dev webpack-cli
+module.exports = async (req, res) => {
+  const orderData = req.body;
+  // You could now create an order in your DB, and send a Yoco payment link to the customer via email
+  // Or respond with instructions, or even generate a unique HTML page with the Yoco widget for payment
+  res.status(200).json({ message: "Order received. Payment to follow." });
+};
